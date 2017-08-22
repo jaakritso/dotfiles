@@ -28,8 +28,10 @@
 	ui = always
 
 [core]
-	excludesfile = ~/.gitignore
+	excludesfile = /Users/jaakritso/.gitignore
 	attributesfile = ~/.gitattributes
+	quotepath = false
+	autocrlf = input
 [color "branch"]
 	current = yellow reverse
 	local = yellow
@@ -78,3 +80,12 @@
 [include]
   # For username / github token / etc
   path = ~/.gitconfig.local
+[user]
+	name = Jaak Ritso
+	email = jaak.ritso@nortal.com
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Users/jaakritso/Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

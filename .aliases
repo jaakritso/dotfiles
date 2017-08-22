@@ -35,7 +35,9 @@ fi
 
 # ls options: F = put `/` after folders, h = byte unit suffixes, color! (even with piping to awk) 
 alias ls='CLICOLOR_FORCE=1 gls -aFh ${colorflag}'
-
+# List all files colorized in long format
+alias l="ls -lF ${colorflag}"
+#
 # List ALL files (colorized() in long format, show permissions in octal
 alias la="ls -l | awk '
 {
@@ -86,6 +88,15 @@ alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
 # Shortcuts
 alias g="git"
 alias v="vim"
+alias d="cd ~/Dropbox"
+alias dl="cd ~/Downloads"
+alias dt="cd ~/Desktop"
+alias p="cd ~/Projects"
+alias pn="cd ~/Projects/Nortal"
+
+# Custom aliases
+alias protomount="~/bash_scripts/mount_proto.sh"
+alias sass-proto="~/bash_scripts/sass_build.sh"
 
 # File size
 alias fs="stat -f \"%z bytes\""

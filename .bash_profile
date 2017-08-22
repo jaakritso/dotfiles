@@ -35,10 +35,7 @@ which shopt > /dev/null && shopt -s histappend  # append to history, don't overw
 
 # Save and reload the history after each command finishes
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
-
 # ^ the only downside with this is [up] on the readline will go over all history not just this bash session.
-
-
 
 ##
 ## hooking in other apps…
@@ -61,11 +58,14 @@ if [[ -n "$ZSH_VERSION" ]]; then  # quit now if in zsh
     return 1 2> /dev/null || exit 1;
 fi;
 
-# bash completion.
-if  which brew > /dev/null && [ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]; then
-    source "$(brew --prefix)/share/bash-completion/bash_completion";
-elif [ -f /etc/bash_completion ]; then
-    source /etc/bash_completion;
+# bash completion
+#
+[ -f /usr/local/etc/bash_completion.d ] && . /usr/local/etc/bash_completion.d
+
+if  which brew > /dev/null && [ -f "$(brew --prefix)/share/bash-completion/bash_completion.d" ]; then
+    source "$(brew --prefix)/share/bash-completion/bash_completion.d";
+elif [ -f /etc/bash_completion.d ]; then
+    source /etc/bash_completion.d;
 fi;
 
 # homebrew completion
@@ -98,4 +98,7 @@ shopt -s cdspell;
 
 
 
+
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
