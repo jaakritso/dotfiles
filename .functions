@@ -141,3 +141,18 @@ code () {
 shellswitch () {
 	chsh -s $(brew --prefix)/bin/$1
 }
+
+
+# open proto
+openp () {
+	# check if proto is mounted
+	if [ -d ~/proto/nortal/ ]; then
+		cd "~proto/$@"
+	else
+		if ~/bash_scripts/mount_proto.sh
+		then
+			cd "~proto/$@"
+		fi
+
+	fi
+}
