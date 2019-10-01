@@ -104,3 +104,6 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 export PATH="/usr/local/sbin:$PATH"
+
+
+export JAVA_HOME=`/usr/libexec/java_home -v 11.0.1`
