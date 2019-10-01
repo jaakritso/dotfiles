@@ -7,3 +7,5 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$HOME/.yarn/bin:$PATH"
 
 export JAVA_HOME=`/usr/libexec/java_home`
+
+# [ -f ~/.fzf.bash ] && source ~/.fzf.bash
