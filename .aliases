@@ -81,6 +81,7 @@ alias pn="cd ~/Projects/Nortal"
 # Custom aliases
 alias protomount="~/bash_scripts/mount_proto.sh"
 alias sass-proto="~/bash_scripts/sass_build.sh"
+alias start-wiremock="cd ~/Downloads/wiremock/ && ./start-wiremock.bat"
 alias ungz="gunzip -k"
 
 # File size
@@ -89,7 +90,6 @@ alias fs="stat -f \"%z bytes\""
 # Empty the Trash on all mounted volumes and the main HDD
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; rm -rfv ~/.Trash"
 
-alias start-wiremock="cd ~/Downloads/wiremock/ && ./start-wiremock.bat"
 # One of @janmoesen’s ProTip™s
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
 	alias "$method"="lwp-request -m '$method'"
